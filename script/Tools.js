@@ -47,14 +47,12 @@ const Tools = {
             Text.remove();
         },1000)
     },
-    'GetSheetData':function(RequestType,DataToAppend={},URL='GSHDataSheet'){
+    'GetSheetData':function(RequestType,DataToAppend={},URL){
         let FormToFetch = new FormData();
         if(RequestType===undefined){return Promise.reject('ReQuestType undefined.')}else{FormToFetch.append('ReQuestType',RequestType)}
         Object.keys(DataToAppend).forEach(DataName=>FormToFetch.append(DataName,DataToAppend[DataName]));
-        const Link = URL==='GSHDataSheet'?'https://script.google.com/macros/s/AKfycbytKOt1i764Irpczd4p8jbCRdVhcESEh_AZxdMAX6aOYl87wJkGzD2jRZzhkYoel-sl/exec'
-            :URL==='GSHDuty'?'https://script.google.com/macros/s/AKfycbwze3zAg-eRdLSMLRVbRVKNtFTH4nYv1ukqBFMovG_F4_8pURRGbtWfA9baw-0ic5tT/exec':URL;
         const fetchOptions = {'method':'POST','body':FormToFetch};
-        return fetch(Link,fetchOptions);
+        return fetch(URL,fetchOptions);
     },
     'LabelTitle':(CheckBox,Label)=>{
         CheckBox.addEventListener('change',function(){
@@ -96,13 +94,3 @@ const Tools = {
         return CompareOutput;
     }
 };
-
-
-/*
-GSLink Tools
-'MiERu':(Node,YN)=>{
-        let Mi = YN == null ? 'visible':'hidden';
-        let seeing = Klee => Klee.style.visibility = Mi;
-        if (Array.isArray(Node)){Node.forEach(Eula=>seeing(document.getElementById(Eula)))}else{seeing(document.getElementById(Node))}
-    },
-*/
