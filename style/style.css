@@ -22,7 +22,6 @@ nav{
 }
 nav>div{
     display: flex;
-    width: 25%;
     height: 27px;
     flex-direction: column; 
 }

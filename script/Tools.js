@@ -11,7 +11,7 @@ const Tools = {
         document.getElementById(ParentId).addEventListener('keydown',function(FiredKey){
         if(FiredKey.key==='Enter'&&!FiredKey.ctrlKey){document.getElementById(ButtonId).click()}},false)
     },
-    'CopyMyText':function(TextToCopy='',CopyNode=undefined){
+    'CopyMyText':function(TextToCopy='',CopyNode){
         try{
             let CopyZone;
             if (CopyNode===undefined){
@@ -76,6 +76,7 @@ const Tools = {
                 ATag.appendChild(document.createElement('div')).textContent = Title;
             });
         });
+        Array.from(document.querySelectorAll('nav>div')).forEach(Amber=>Amber.style.width=`${String(1/Object.keys(Lists).length)*100}%`);
     },
     'ObjCompare':(ObjA,ObjB)=>{
         let CompareOutput = [,];
