@@ -11,7 +11,7 @@ const Tools = {
         document.getElementById(ParentId).addEventListener('keydown',function(FiredKey){
         if(FiredKey.key==='Enter'&&!FiredKey.ctrlKey){document.getElementById(ButtonId).click()}},false)
     },
-    'CopyMyText':function(TextToCopy='',CopyNode=undefined){
+    'CopyMyText':function(TextToCopy='',CopyNode){
         try{
             let CopyZone;
             if (CopyNode===undefined){
