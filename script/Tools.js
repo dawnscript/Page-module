@@ -1,5 +1,6 @@
 const Tools = {
     'GetNode':(ElementKey,keyType='id')=>keyType==='id'?document.getElementById(ElementKey):document.querySelector(ElementKey),
+    'GetNodeArray':(parentNode,nodetype)=>Array.from(parentNode.querySelectorAll(nodetype)),
     'addListener':(element,event,func)=>element.addEventListener(event,func,false),
     'MiERu':(Node,YN=true)=>{
         let Mi = YN ? 'visible':'hidden';
