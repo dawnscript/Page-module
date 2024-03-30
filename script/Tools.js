@@ -82,7 +82,7 @@ const Tools = {
     'ObjCompare':(ObjA,ObjB)=>{
         let CompareOutput = [,];
         const Objkeys = Amber=>Object.keys(Amber);
-        const IsValueObj = Obj=>Object.keys(Obj).every(Amber=>typeof Obj[Amber]==='object');        
+        const IsValueObj = Obj=>Objkeys(Obj).length===0?false:Object.keys(Obj).every(Amber=>typeof Obj[Amber]==='object');
         if(Objkeys(ObjA).length!==Objkeys(ObjB).length){
             CompareOutput[0]=false;
             CompareOutput[1]='key length';
